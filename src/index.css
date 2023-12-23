@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #386641;
 }
 
 h1 {
@@ -65,4 +66,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+table, th, td {
+  border: #6A994E solid 5px;
+  background-color: #A7C957;
+}
+
+th, td {
+  border: #386641 solid 2px;
+  background-color: #BC4749;
+}
+
+.btns {
+  background-color: #F2E8CF;
+  color: black
 }
