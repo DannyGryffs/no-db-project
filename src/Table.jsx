@@ -1,5 +1,6 @@
  import { useState, useEffect } from 'react'
  import axios from 'axios'
+ import Div from './Div.jsx'
  import Header from'./Header.jsx'
  import Row from './Row.jsx'
  import AddButton from './AddButton.jsx'
@@ -38,6 +39,7 @@
 
     return (
         <>
+        <Div/>
             <table>
                 <Header/>
                 <tbody>

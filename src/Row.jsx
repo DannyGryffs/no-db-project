@@ -19,6 +19,12 @@ export default function Row(props) {
         setIsEditing(!isEditing)
     }
 
+    async function deleteClickHandler() {
+       let response = await axios.delete(`/gift/${props.id}`)
+
+       props.setTableData(response.data)
+    }
+
     return (
         <>
             { isEditing
@@ -55,7 +61,7 @@ export default function Row(props) {
                 </tr>
                : <tr>
                     <td className={'lrgcolumn'}>
-                        <button class='btns'>Delete</button>
+                        <button onClick={deleteClickHandler} class='btns'>Delete</button>
                         <button onClick={editClickHandler} class='btns'>Edit</button>
                     </td>
                     <td className={'lrgcolumn'}>

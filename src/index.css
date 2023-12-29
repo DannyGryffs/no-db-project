@@ -68,20 +68,24 @@ button:focus-visible {
   }
 }
 
-table, th, td {
+table {
   border: #6A994E solid 5px;
+  border-radius: 2em;
   background-color: #A7C957;
 }
 
 th, td {
   border: #386641 solid 4px;
   background-color: #BC4749;
+  border-radius: 2em;
+
 }
 
 .btns {
   background-color: #F2E8CF;
   color: #386641;
   border: solid 3px #386641;
+  border-radius: 2em;
   margin: 2px
 }
 
@@ -89,10 +93,20 @@ th, td {
   background-color: #F2E8CF;
   color: #386641;
   border: solid 3px #A7C957;
+  border-radius: 2em;
   margin-top: 25px;
   margin-bottom: 25px;
   margin-left: 20px;
 
+}
+
+.xmas-txt {
+  color: #BC4749;
+  border: solid 5px #A7C957;
+  background-color: #F2E8CF;
+  border-radius: 2em;
+  margin-top: 5px;
+  padding: 5px
 }
 
 .lrgcolumn {
