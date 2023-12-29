@@ -34,13 +34,13 @@
                 <Header/>
                 <tbody>
                     { tableData.map((giftObj) => {
-                        return <Row
-                            key={giftObj.id}
-                            gift={giftObj.gift}
-                            forWho={giftObj.forWho}
-                            price={giftObj.price}
-                        />
-                    })
+                            return <Row
+                                key={giftObj.id}
+                                gift={giftObj.gift}
+                                forWho={giftObj.forWho}
+                                price={giftObj.price}
+                            />
+                        })
 
                     }
                 </tbody>
