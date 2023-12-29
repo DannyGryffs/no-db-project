@@ -28,6 +28,19 @@
 
     const [tableData, setTableData] = useState(data)
 
+    function setTableDataRow(id, newRowObject) {
+
+        let newTableData = structuredClone(tableData)
+
+        for (let i = 0; i < newTableData.length; i++) {
+            if (newTableData[i].id === id) {
+                newTableData.splice(i, 1, newRowObject)
+                break
+            }
+        }
+        setTableData(newTableData)
+    }
+
     return (
         <>
             <table>
@@ -39,6 +52,8 @@
                                 gift={giftObj.gift}
                                 forWho={giftObj.forWho}
                                 price={giftObj.price}
+                                id={giftObj.id}
+                                setTableDataRow={setTableDataRow}
                             />
                         })
 

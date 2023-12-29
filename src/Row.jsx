@@ -4,6 +4,11 @@ import { useState } from 'react'
 export default function Row(props) {
 
     let [isEditing, setIsEditing] = useState(false)
+    let [newData, setNewData] = useState({gift: props.gift, forWho: props.forWho, price: props.price})
+
+
+    console.log(newData)
+
 
     function editClickHandler() {
         setIsEditing(!isEditing)
@@ -14,22 +19,33 @@ export default function Row(props) {
             { isEditing
                 ? <tr>
                     <td>
-                    <EditSaveButton/>
+                        <EditSaveButton
+                        newData={newData}
+                        id={props.id}
+                        setTableDataRow={props.setTableDataRow}
+                        setIsEditing={setIsEditing}
+                        />
                     </td>
                     <td>
-                    <GiftEditingField
-                        gift={props.gift}
+                        <GiftEditingField
+                            setNewData={setNewData}
+                            newData={newData}
+                            gift={props.gift}
                     />
                     </td>
                     <td>
-                    <ForWhoEditingField
-                        forWho={props.forWho}
+                        <ForWhoEditingField
+                            setNewData={setNewData}
+                            newData={newData}
+                            forWho={props.forWho}
                     />
                     </td>
                     <td>
-                    <PriceEditingField
-                        price={props.price}
-                    />
+                        <PriceEditingField
+                            setNewData={setNewData}
+                            newData={newData}
+                            price={props.price}
+                        />
                     </td>
                 </tr>
                : <tr>
@@ -52,10 +68,18 @@ export default function Row(props) {
     )
 }
 
-function EditSaveButton() {
+function EditSaveButton(props) {
+
+    const {id, newData, setTableDataRow, setIsEditing} = props
+
+    function onSaveClick() {
+        setTableDataRow(id, newData)
+        setIsEditing(false)
+    }
+
     return(
         <>
-            <button class='btns'>Save</button>
+            <button onClick={onSaveClick} class='btns'>Save</button>
         </>
     )
 }
@@ -66,6 +90,7 @@ function GiftEditingField(props) {
 
     function ChangeHandler(event) {
         setCurrentValue(event.target.value)
+        props.setNewData({...props.newData, gift: event.target.value})
     }
 
     return(
@@ -80,6 +105,7 @@ function ForWhoEditingField(props) {
 
     function ChangeHandler(event) {
         setCurrentValue(event.target.value)
+        props.setNewData({...props.newData, forWho: event.target.value})
     }
 
     return(
@@ -93,6 +119,7 @@ function PriceEditingField(props) {
     const [currentValue, setCurrentValue] = useState(props.price)
     function ChangeHandler(event) {
         setCurrentValue(event.target.value)
+        props.setNewData({...props.newData, price: +event.target.value})
     }
 
     return(
