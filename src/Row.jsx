@@ -17,13 +17,19 @@ export default function Row(props) {
                     <EditSaveButton/>
                     </td>
                     <td>
-                    <GiftEditingField/>
+                    <GiftEditingField
+                        gift={props.gift}
+                    />
                     </td>
                     <td>
-                    <ForWhoEditingField/>
+                    <ForWhoEditingField
+                        forWho={props.forWho}
+                    />
                     </td>
                     <td>
-                    <PriceEditingField/>
+                    <PriceEditingField
+                        price={props.price}
+                    />
                     </td>
                 </tr>
                : <tr>
@@ -49,31 +55,49 @@ export default function Row(props) {
 function EditSaveButton() {
     return(
         <>
-            <button>Save</button>
+            <button class='btns'>Save</button>
         </>
     )
 }
 
-function GiftEditingField() {
+function GiftEditingField(props) {
+
+    const [currentValue, setCurrentValue] = useState(props.gift)
+
+    function ChangeHandler(event) {
+        setCurrentValue(event.target.value)
+    }
+
     return(
         <>
-            Editing gift
+            <input class='btns' value={currentValue} onChange={ChangeHandler}/>
         </>
     )
 }
 
-function ForWhoEditingField() {
+function ForWhoEditingField(props) {
+   const [currentValue, setCurrentValue] = useState(props.forWho)
+
+    function ChangeHandler(event) {
+        setCurrentValue(event.target.value)
+    }
+
     return(
         <>
-            Editing for who
+            <input class='btns' value={currentValue} onChange={ChangeHandler}/>
         </>
     )
 }
 
-function PriceEditingField() {
+function PriceEditingField(props) {
+    const [currentValue, setCurrentValue] = useState(props.price)
+    function ChangeHandler(event) {
+        setCurrentValue(event.target.value)
+    }
+
     return(
         <>
-            Editing price
+            <input class='btns' type={'number'} value={currentValue} onChange={ChangeHandler}/>
         </>
     )
 }
