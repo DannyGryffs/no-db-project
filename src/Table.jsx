@@ -12,8 +12,8 @@
                     <Row gift={'Speaker'} forWho={'Rick'} price={50}/>
                     <Row gift={'Legos'} forWho={'Morty'} price={30}/>
                 </tbody>
-                <AddButton/>
             </table>
+            <AddButton/>
         </>
     )
  }

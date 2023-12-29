@@ -1,8 +1,8 @@
 export default function Add() {
     return (
         <>
-        <button class='btns'>
-            Add
+        <button class='add-btn'>
+            Add Gift
         </button>
         </>
     )

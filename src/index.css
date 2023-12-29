@@ -74,11 +74,35 @@ table, th, td {
 }
 
 th, td {
-  border: #386641 solid 2px;
+  border: #386641 solid 4px;
   background-color: #BC4749;
 }
 
 .btns {
   background-color: #F2E8CF;
-  color: black
+  color: #386641;
+  border: solid 3px #386641;
+  margin: 2px
+}
+
+.add-btn {
+  background-color: #F2E8CF;
+  color: #386641;
+  border: solid 3px #A7C957;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+
+}
+
+.lrgcolumn {
+  width: 250px;
+}
+
+.medcolumn {
+  width: 150px;
+}
+
+.smlcolumn {
+  width: 75px;
 }

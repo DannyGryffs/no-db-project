@@ -2,10 +2,10 @@ export default function Header() {
     return (
         <thead>
             <tr>
-                <th></th>
-                <th>Gift</th>
-                <th>For who</th>
-                <th>Price</th>
+                <th className={'lrgcolumn'}></th>
+                <th className={'lrgcolumn'}>Gift</th>
+                <th className={'medcolumn'}>For who</th>
+                <th className={'smlcolumn'}>Price</th>
             </tr>
         </thead>
     )
