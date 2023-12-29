@@ -28,6 +28,10 @@ const db = [
     }
  ]
 
+ app.get('/gifts', (req, res) => {
+    res.status(200).send(db)
+ })
+
  app.put('/edit-gift/:id', (req, res) => {
     let id = +req.params.id
     let editedGift = req.body
