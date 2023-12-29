@@ -1,10 +1,15 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 
 export default function Row(props) {
 
     let [isEditing, setIsEditing] = useState(false)
-    let [newData, setNewData] = useState({gift: props.gift, forWho: props.forWho, price: props.price})
+    let [newData, setNewData] = useState({gift: props.gift,
+        forWho: props.forWho, 
+        price: props.price, 
+        id: props.id})
+
 
 
     console.log(newData)
@@ -22,7 +27,7 @@ export default function Row(props) {
                         <EditSaveButton
                         newData={newData}
                         id={props.id}
-                        setTableDataRow={props.setTableDataRow}
+                        setTableData={props.setTableData}
                         setIsEditing={setIsEditing}
                         />
                     </td>
@@ -70,11 +75,16 @@ export default function Row(props) {
 
 function EditSaveButton(props) {
 
-    const {id, newData, setTableDataRow, setIsEditing} = props
+    const {id, newData, setTableData, setIsEditing} = props
 
     function onSaveClick() {
-        setTableDataRow(id, newData)
-        setIsEditing(false)
+        axios.put(`/edit-gift/${id}`, newData)
+        .then((response) => {
+            console.log(response.data)
+            setTableData(response.data)
+            setIsEditing(false)
+        })
+
     }
 
     return(

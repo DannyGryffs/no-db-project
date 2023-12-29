@@ -5,6 +5,8 @@ const app = express()
 
 app.use(express.json())
 
+let newGlobalId = 4
+
 const db = [
     {
         gift: 'Stuffed Animal',
@@ -26,17 +28,18 @@ const db = [
     }
  ]
 
- app.put('/edit-present/:id', (req, res) => {
-    let id = req.params.id
+ app.put('/edit-gift/:id', (req, res) => {
+    let id = +req.params.id
     let editedGift = req.body
+    editedGift.price = +editedGift.price
     
     for (let i = 0; i < db.length; i++) {
         if (db[i].id === id) {
-            db.splice(i, 1, newRowObject)
+            db.splice(i, 1, editedGift)
             break
         }
     }
-
+    
     res.status(200).send(db)
 })
     
