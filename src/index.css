@@ -72,6 +72,8 @@ table {
   border: #6A994E solid 5px;
   border-radius: 2em;
   background-color: #A7C957;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 th, td {
@@ -92,17 +94,73 @@ th, td {
 .add-btn {
   background-color: #F2E8CF;
   color: #386641;
-  border: solid 3px #A7C957;
+  border: solid 3px #6A994E;
   border-radius: 2em;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 25px;
   margin-left: 20px;
 
 }
 
+.add-th-td {
+  border: #386641 solid 4px;
+  background-color: #F2E8CF;
+  border-radius: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+#gift-input {
+  border: #6A994E solid 4px;
+  background-color: #F2E8CF;
+  color:#386641;
+  font-size: large;
+
+  border-radius: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  margin: 4px
+}
+
+#forWho-input {
+  border: #6A994E solid 4px;
+  background-color: #F2E8CF;
+  color:#386641;
+  font-size: large;
+  border-radius: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 150px;
+  margin: 4px
+
+}
+
+#price-input {
+  border: #6A994E solid 4px;
+  background-color: #F2E8CF;
+  color: #386641;
+  font-size: large;
+  border-radius: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 75px;
+  margin: 4px
+}
+
+.save-btn {
+  background-color: #F2E8CF;
+  color: #386641;
+  border: solid 4px #6A994E;
+  border-radius: 2em;
+  margin: 5px;
+
+}
+
 .xmas-txt {
   color: #BC4749;
-  border: solid 5px #A7C957;
+  border: solid 5px #6A994E;
   background-color: #F2E8CF;
   border-radius: 2em;
   margin-top: 5px;
@@ -120,3 +178,4 @@ th, td {
 .smlcolumn {
   width: 75px;
 }
+

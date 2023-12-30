@@ -32,6 +32,18 @@ const db = [
     res.status(200).send(db)
  })
 
+ app.post('/gift', (req, res) => {
+    let newGift = req.body
+
+    newGift.id = newGlobalId
+    newGlobalId++
+
+    db.push(newGift)
+
+    res.status(200).send(db)
+
+ })
+
  app.put('/edit-gift/:id', (req, res) => {
     let id = +req.params.id
     let editedGift = req.body

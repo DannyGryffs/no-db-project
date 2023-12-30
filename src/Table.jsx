@@ -57,7 +57,9 @@
                     }
                 </tbody>
             </table>
-            <AddButton/>
+            <AddButton
+            setTableData={setTableData}
+            />
         </>
     )
  }
